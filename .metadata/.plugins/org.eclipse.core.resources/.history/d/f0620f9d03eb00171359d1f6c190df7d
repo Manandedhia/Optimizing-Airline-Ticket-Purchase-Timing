@@ -1,0 +1,62 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TestPythonScript {
+	public static void main(String[] args){
+		DateFormat dateFormat=new SimpleDateFormat("MM/dd/yyyy");
+		try {
+			String travelDate="2017-12-28";
+			System.out.println(travelDate);
+			Date newDate;
+			newDate = new SimpleDateFormat("yyyy-dd-MM").parse(travelDate);
+			System.out.println(newDate);
+			String date1=dateFormat.format(newDate);
+			System.out.println(date1);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 //newDate=dateFormat.format(newDate);
+		
+	}
+/*	public static void main(String[] args){
+		String travelDate="2017-12-28";
+		
+		Date newDate;
+		newDate = new SimpleDateFormat("yyyy-dd-MM").parse(travelDate);
+		String date1=dateFormat.format(newDate);
+		System.out.println(date1)
+		//sendData("BOM", "DEL", "12/28/2017");
+	}*/
+	public static void sendData(String source, String Dest, String travelDate) {
+		System.out.println("source :"+source+" Destination : "+Dest+" Date : "+travelDate);
+		
+		try {
+			
+			String[] cmd={
+					"python",
+					"../../1232/expedia.py",
+					source,
+					Dest,
+					travelDate
+			};
+			Runtime rt= Runtime.getRuntime();
+			Process pr=rt.exec(cmd);
+			System.out.println("here after CMD");
+			BufferedReader bfr = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+			String line="";
+			while((line=bfr.readLine())!= null){
+				System.out.println(line);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		
+	}
+
+}

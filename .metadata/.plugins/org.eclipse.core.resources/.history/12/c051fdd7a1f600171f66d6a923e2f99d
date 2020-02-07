@@ -1,0 +1,24 @@
+package codes;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class daysToDeparture {
+	static Connection con = Database.getDBConnection();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try{
+			String sql="select id,DATEDIFF(departureDate,currentDate) from flightDataset";
+			
+			PreparedStatement ps=con.prepareStatement(sql);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+				
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+}

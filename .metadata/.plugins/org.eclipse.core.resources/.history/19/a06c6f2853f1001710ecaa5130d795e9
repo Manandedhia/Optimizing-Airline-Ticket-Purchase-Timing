@@ -1,0 +1,16 @@
+package codes;
+
+import java.sql.Connection;
+
+public class daysToDeparture {
+	static Connection con = Database.getDBConnection();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try{
+			String sql="";
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,191 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body class="index_body">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a href="/">
+	  <table border="0" width="200" height="50"><tbody><tr><td align="center" valign="bottom">
+    <div style="text-align:center;color:white" class="selected">Airline Flight Predictions</div>
+</td>
+</tr></tbody></table></a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav">
+		<li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+		<li><a href="about">About</a></li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, Guest! <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="account.php">My Account</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a style="cursor: hand;" data-toggle="modal" data-target=".bs-example-modal-sm">Sign in</a></li>
+          </ul>
+        </li>
+	  </ul>
+	</div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="top-homeblock">
+
+ <table height="150"><tbody><tr><td></td></tr></tbody></table>
+	<h1 align="center" class="big-heading">Search airfares, intelligently.</h1>
+	<h1 class="sub-heading"><small>India's first airfare prediction engine.</small></h1><br><br>
+	<div class="searchswap">
+		<div class="searchbus"><!--searchbus started  -->
+			<div class="row">
+				<form>
+
+					<div class="col-sm-3 form-group">
+						<input type="text" id="from" class="form-control" placeholder="Source"/>
+					</div>
+					<div class="col-sm-3 form-group">
+						<input type="text" id="to" class="form-control" placeholder="Destination"/>
+					</div>
+					<div class="col-sm-3 form-group">
+						<input type="date" id="travelDate" class="form-control" />
+					</div>
+					<div class="col-sm-3 form-group">
+						<button type="submit" class="btn btn-success" id="search">Search</button>
+					</div>
+
+				</form>
+			</div>
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<table height="320"><tbody><tr><td></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+	<br>
+
+
+
+
+  </div>
+
+ <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="myModalheader">Please wait</h4>
+      </div>
+      <div class="modal-body" id="myModalbody">
+        <!--<center><img src="assets/img/ajax-loader.gif"></center>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.login-card {
+	width: 300px;
+	height: auto;
+	padding: 25px 25px 25px 25px;
+	display: inline-block;
+	margin: auto;
+	margin-top: 100px;
+	text-align: left;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	background: rgba(255, 255, 255, 1)!important;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+	box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+}
+
+.form-control {
+	margin-top: 5px;
+}
+
+
+</style>
+
+<!-- Modal start here -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="login-card">
+        <center><div style="text-align:center;color:Black">Airline Flight Predictions</div></center>
+        <hr>
+        <div id="lg-done" style="display: none; ">
+			<center><span class="glyphicon glyphicon-ok-sign" aria-hidden="true" style="font-size: 40px; color: rgb(0,200,0);"></span><br><h5 id="lg-done-msg"></h5></center>
+		</div>
+		<div id="lg-fail" style="display: none; ">
+			<center><span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="font-size: 40px; color: rgb(200,0,0);"></span><br><h5 id="lg-fail-msg"></h5></center>
+		</div>
+        <div id="lg-username-div"><div id="lg-usr-label">Username: </div>
+        <input id="lg-username" type="text" class="form-control" placeholder="Email Address">
+		<small id="lg-email-error" style="display: none; color: rgb(255,0,0);">Email ID not valid</small>
+        </div>
+        <div id="lg-password-div">
+            <br>Password:
+            <input id="lg-password" type="password" class="form-control" placeholder="Password">
+			<small id="lg-password-error" style="display: none; color: rgb(255,0,0);">Password cannot be blank</small>
+        </div>
+        <br>
+        <button id="lg-login" class="btn btn-primary btn-block" onclick="login()" type="submit" style="margin-bottom: 5px;">Login</button>
+        <a id="lg-forgot-link" onclick="forgot_pswd(this.text)" style="cursor: hand;">Forgot password?</a>
+		<div id="lg-signup-div" style="display: inline;">
+            <hr style="margin-top: 10px; margin-bottom: 10px;">
+            <div id="lg-signup-text">Don't have an account?</div>
+            <button id="lg-signup" class="btn btn-success btn-block" type="submit" onclick="signup()" style="margin-top: 5px;">Create a free Account</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Modal ends here -->
+<script type="text/javascript" src="assets/js/login.js"></script>
+
+
+<script type="text/javascript">
+
+  if(isTouchDevice()===false) {
+	$('[data-toggle="tooltip"]').tooltip('fixTitle')
+  }
+
+  </script>
+
+<script type="text/javascript" src="assets/js/custom.js"></script>
+
+
+
+</body>
+</html>

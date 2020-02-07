@@ -1,0 +1,19 @@
+package codes;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class daysToDeparture {
+	static Connection con = Database.getDBConnection();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try{
+			String sql="select * from flightDataset";
+			PreparedStatement ps=con.prepareStatement(sql);
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+}

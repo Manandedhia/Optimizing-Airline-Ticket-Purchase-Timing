@@ -1,0 +1,313 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet"  href="custom.css">
+<script src="jquery.min.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+<link href="bootstrap-3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+<title>Airline Flight Prediction India's first airfare prediction engine</title>
+<meta name="keywords" content="airfare, airfare prediction, fare movement, best time to buy">
+<meta name="description" content="Predict airfare movements in India and know the right time to buy air tickets. Get amazing fare tips on your travel that will help you get the best deal on air tickets.">
+<!--datepicker -->
+             
+<link rel="stylesheet" href="datepicker/css/foundation-datepicker.min.css"/>
+<script src="datepicker/js/jquery.js"></script>
+<script src="datepicker/js/foundation-datepicker.js"></script>
+<script src="datepicker/js/foundation-datepicker-disabled.js"></script>
+<!--datepicker-->
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+
+.index_body {
+    background: url(airplanes.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+    }
+
+	
+.top-homeblock {
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.6)!important;
+    -moz-box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+}
+
+
+.big-heading {
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    line-height: 1;
+    color: rgb(75, 75, 75);
+    letter-spacing: -.02em;
+    -webkit-font-smoothing: antialiased;
+}
+</style>
+
+
+</head>
+<body class="index_body">
+  
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a href="/">
+	  <table border="0" width="200" height="50"><tbody><tr><td align="center" valign="bottom">
+    <div style="text-align:center;color:white" class="selected">Airline Flight Predictions</div>
+</td>
+</tr></tbody></table></a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav">
+		<li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+		<li><a href="about">About</a></li>
+	  </ul>
+	</div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+  
+<div class="top-homeblock">
+  
+ <table height="150"><tbody><tr><td></td></tr></tbody></table>
+	<h1 align="center" class="big-heading">Search airfares, intelligently.</h1>
+	<h1 class="sub-heading"><small>India's first airfare prediction engine.</small></h1><br><br>
+	<div class="searchswap">
+	<div class="searchbus"><!--searchbus started  -->
+<div class="source"><!--source 1 started-->
+<span class="slogo"><img src="building.png" class="slogoimg" alt="building logo"></span>
+<div class="input1">
+<input class="input1_1" id="t1" type="text" onkeyup="checktf()">
+<label class="input1_2" id="l1" for="t1">From</label>
+<div class="error" style="visibility: hidden;">error</div>
+</div>
+</div><!--source 1 ended-->
+
+
+<div class="source"><!--source 2 started-->
+<span class="slogo"><img src="building.png" class="slogoimg" alt="building logo"></span>
+<div class="input1">
+<input class="input1_1" id="t2" type="text" onkeyup="checktf()">
+<label class="input1_2" id="l2" for="t2">To</label>
+<div class="error" style="visibility: hidden;">error</div>
+</div>
+</div><!--source 2 ended-->
+
+<div class="source"><!--source 3 started-->
+<span class="slogo"><img src="calendar.png" class="slogoimg" alt="calendar logo"></span>
+<div class="input1">
+<input class="input1_1" value="" id="dpd1" type="text" onchange="checktf()">
+<label class="input1_2" id="l3" for="dpd1">Onward Date</label>
+<table class="table">
+<thead>
+<tr>
+
+</tr>
+</thead>
+</table>
+<div class="error" style="visibility: hidden;">error</div>
+</div>
+</div><!--source 3 ended-->
+
+
+<div class="source"><!--source 5 button started-->
+<button class="searchbutton">search</button>
+</div><!--source 5 button ended-->
+
+</div>
+</div>
+
+	<table height="320"><tbody><tr><td></td></tr></tbody></table>
+	
+	
+	
+
+	
+	
+	
+	<div class="second-block">
+	  <h1 class="big-heading">How does it work?</h1> <br><br><br>
+	  
+		<!-- This table if for larger screens -->
+		<table class="works-table-lg" width="100%" height="200" border="0">
+		<tbody><tr height="70">
+		  <td align="center" width="25%"><img src="assets/img/find.png"></td>
+		  <td align="center" width="12.5%" rowspan="3"><img src="assets/img/next.png"></td>
+		  <td align="center" width="25%"><img src="assets/img/calculator.png"></td>
+		  <td align="center" width="12.5%" rowspan="3"><img src="assets/img/next.png"></td>
+		  <td align="center" width="25%"><img src="assets/img/chart_down.png"></td>
+		</tr>
+		<tr>
+		  <td align="center"><strong>Airfare tracker</strong></td>
+		  <td align="center"><strong>Learning algorithm</strong></td>
+		  <td align="center"><strong>Airfare predictions</strong></td>
+		</tr>
+		<tr>
+		  <td>Unfare tracks over 50 Million airfare points every single day across different domestic routes in India in its big data database. </td>
+		  <td>It then applies a machine learning algorithm over the airfare points to find the pattern or trend of the airfare movements.</td>
+		  <td>Based on this model, Airline Flight Prediction predicts the future airfare movements and recommends you to either buy immediately or wait for the fare drop.</td>
+		</tr>
+		</tbody></table>
+		
+		<!-- This table if for smaller screens -->
+		<table class="works-table-sm" width="75%" border="0" align="center">
+		  <tbody><tr>
+			<td align="center" height="70"><img src="assets/img/find.png"></td>
+		  </tr>
+		  <tr>
+			<td align="center" height="50"><strong>Airfare tracker</strong></td>
+		  </tr>
+		  <tr>
+			<td align="center" valign="top" height="100">Unfare tracks over 100 Million airfare points every single day across different domestic routes in India in its big data database. </td>
+		  </tr>
+		  <tr>
+			<td align="center" valign="top" height="100"><img src="assets/img/down.png"></td>
+		  </tr>
+		  <tr>
+			<td align="center" height="70"><img src="assets/img/calculator.png"></td>
+		  </tr>
+		  <tr>
+			<td align="center" height="50"><strong>Learning algorithm</strong></td>
+		  </tr>
+		  <tr>
+			<td align="center" valign="top" height="100">It then applies a machine learning algorithm over the airfare points to find the pattern or trend of the airfare movements.</td>
+		  </tr>
+		  <tr>
+			<td align="center" valign="top" height="100"><img src="assets/img/down.png"></td>
+		  </tr>
+		  <tr>
+			<td align="center" height="70"><img src="assets/img/chart_down.png"></td>
+		  </tr>
+		  <tr>
+			<td align="center" height="50"><strong>Airfare predictions</strong></td>
+		  </tr>
+		  <tr>
+			<td align="center" valign="top" height="100">Based on this model, Unfare predicts the future airfare movements and recommends you to either buy immediately or wait for the fare drop.</td>
+		  </tr>
+		</tbody></table>
+	</div>
+			  
+	<br>
+	
+	
+	
+	<div class="third-block">
+	<br><center>©Copyright 2017 Airline Flight Prediction . All rights reserved.</center><br>
+	</div>
+			  
+  </div>
+  
+ <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="myModalheader">Please wait</h4>
+      </div>
+      <div class="modal-body" id="myModalbody">
+        <center><img src="assets/img/ajax-loader.gif"></center>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+.login-card {
+	width: 300px;
+	height: auto;
+	padding: 25px 25px 25px 25px;
+	display: inline-block;
+	margin: auto;
+	margin-top: 100px;
+	text-align: left;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	background: rgba(255, 255, 255, 1)!important;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+	box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset, rgba(0, 0, 0, 0.35) 0 2px 5px 1px;
+}
+
+.form-control {
+	margin-top: 5px;
+}
+    
+    
+</style>
+
+<!-- Modal start here -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="login-card">
+        <center><div style="text-align:center;color:Black">Airline Flight Predictions</div></center>
+        <hr>
+        <div id="lg-done" style="display: none; ">
+			<center><span class="glyphicon glyphicon-ok-sign" aria-hidden="true" style="font-size: 40px; color: rgb(0,200,0);"></span><br><h5 id="lg-done-msg"></h5></center>
+		</div>
+		<div id="lg-fail" style="display: none; ">
+			<center><span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="font-size: 40px; color: rgb(200,0,0);"></span><br><h5 id="lg-fail-msg"></h5></center>
+		</div>
+        <div id="lg-username-div"><div id="lg-usr-label">Username: </div>
+        <input id="lg-username" type="text" class="form-control" placeholder="Email Address">
+		<small id="lg-email-error" style="display: none; color: rgb(255,0,0);">Email ID not valid</small>
+        </div>
+        <div id="lg-password-div">
+            <br>Password: 
+            <input id="lg-password" type="password" class="form-control" placeholder="Password">
+			<small id="lg-password-error" style="display: none; color: rgb(255,0,0);">Password cannot be blank</small>
+        </div>
+        <br>
+        <button id="lg-login" class="btn btn-primary btn-block" onclick="login()" type="submit" style="margin-bottom: 5px;">Login</button>
+        <a id="lg-forgot-link" onclick="forgot_pswd(this.text)" style="cursor: hand;">Forgot password?</a>
+		<div id="lg-signup-div" style="display: inline;">
+            <hr style="margin-top: 10px; margin-bottom: 10px;">
+            <div id="lg-signup-text">Don't have an account?</div>
+            <button id="lg-signup" class="btn btn-success btn-block" type="submit" onclick="signup()" style="margin-top: 5px;">Create a free Account</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Modal ends here -->
+<script type="text/javascript" src="assets/js/login.js"></script>
+
+
+<script type="text/javascript">
+  
+  if(isTouchDevice()===false) {
+	$('[data-toggle="tooltip"]').tooltip('fixTitle')
+  }
+  
+  </script>
+
+<script type="text/javascript" src="assets/js/custom.js"></script>
+  
+		
+
+</body></html>
